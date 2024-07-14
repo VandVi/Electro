@@ -1,56 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href ="style.css" rel="stylesheet"/>
-    <title>ThingSpeak Data Sender</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>electronexus</title>
+  </head>
+  <body>
+    <h2 id="heading">DATA LOGGER by ELECTRONEXUS</h2>
 
-    <h2 id="heading">ThingSpeak Data Sender</h2>
+    <form id="form">
+      <div class="formrow">
+        <label class="label" for="api_key">ENTER ID:</label>
+        <input class="input" type="text" name="api_key" required /><br />
+      </div>
+      <div class="formrow">
+        <label class="label" for="field1">FIELD 1:</label>
+        <input class="input" type="text" name="field1" required /><br />
 
-    <form id="thingSpeakForm">
-        <label for="api_key">ThingSpeak API Key:</label>
-        <input type="text" id="api_key" name="api_key" required><br>
-
-        <label for="field1">Field 1:</label>
-        <input type="text" id="field1" name="field1" required><br>
-
-        <label for="field2">Field 2:</label>
-        <input type="text" id="field2" name="field2" required><br>
-
-        <button type="button" onclick="sendData()">Send Data to ThingSpeak</button>
+        <label class="label" for="field2">FIELD 2:</label>
+        <input class="input" type="text" name="field2" required /><br />
+      </div>
+      <p id="result"></p>
+      <div class="btn">
+        <button id="button" type="button" onclick="sendData()">SUBMIT</button>
+      </div>
     </form>
 
-    <p id="result"></p>
-
-    <script>
-        function sendData() {
-            var api_key = document.getElementById('api_key').value;
-            var value1 = document.getElementById('field1').value;
-            var value2 = document.getElementById('field2').value;
-
-            var url = 'https://api.thingspeak.com/update';
-            var data = 'api_key=' + api_key + '&field1=' + value1 + '&field2=' + value2;
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', url, true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        document.getElementById('result').textContent = 'Data sent successfully!';
-                    } else {
-                        document.getElementById('result').textContent = 'Error sending data: ' + xhr.status;
-                    }
-                }
-            };
-
-            xhr.send(data);
-        }
-    </script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
