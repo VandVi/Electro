@@ -57,9 +57,9 @@ body {
   height: 40px;
   text-align: center;
   font-weight: 800;
-  color: rgb(112, 67, 8);
+  color: rgb(39, 23, 2);
   background: transparent;
-  border-bottom: 1px solid #a05b00;
+  border-bottom: 1px solid #000000;
   border-top: transparent;
   border-left: transparent;
   border-right: transparent;
@@ -76,7 +76,7 @@ body {
 }
 
 .input:focus {
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #464545;
 }
 
 /* .input:active {
@@ -128,25 +128,45 @@ body {
 }
 
 @media (max-width: 425px) {
-  body {
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-  #heading .label .input {
+  #heading {
     font-size: 30px;
+    padding-top: 4%;
+    margin-bottom: 5%;
   }
-  .form {
-    padding: 5px 0 0 0;
+
+  #form {
+    width: 90%;
+    padding-top: 3%;
+    height: 585px;
   }
-  .form-row {
-    display: block;
+
+  #form .formrow {
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 120%;
+    margin: 40px 0;
+    flex-direction: column;
   }
-  form .formrow .input {
-    margin: 35px 0 !important;
+
+  #form .formrow .label {
+    margin: 10px 0;
   }
-  .btn .input {
-    width: 40% !important;
+
+  .input {
+    width: 80%;
+    text-align: center;
+    font-size: 18px;
+    height: 35px;
+  }
+
+  #button {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .btn {
+    padding-top: 0px;
   }
 }
