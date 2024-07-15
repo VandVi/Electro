@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
     <link href="style.css" rel="stylesheet" />
     <title>electronexus</title>
   </head>
@@ -12,21 +13,19 @@
     <form id="form">
       <div class="formrow">
         <label class="label" for="api_key">ENTER ID:</label>
-        <input class="input" type="text" name="api_key" required /><br />
+        <input class="input" type="text" id="api_key" required /><br />
       </div>
       <div class="formrow">
         <label class="label" for="field1">FIELD 1:</label>
-        <input class="input" type="text" name="field1" required /><br />
+        <input class="input" type="number" id="field1" required /><br />
 
         <label class="label" for="field2">FIELD 2:</label>
-        <input class="input" type="text" name="field2" required /><br />
+        <input class="input" type="number" id="field2" required /><br />
       </div>
       <p id="result"></p>
       <div class="btn">
         <button id="button" type="button" onclick="sendData()">SUBMIT</button>
       </div>
     </form>
-
-    <script src="script.js"></script>
   </body>
 </html>
